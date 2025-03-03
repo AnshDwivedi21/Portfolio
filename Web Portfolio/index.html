@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #b3e5fc, #e3f2fd, #f0f0f0);
+        }
+        .hero-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 60%);
+        }
+        .hero-image {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background: url('/images/your-profile.jpeg') no-repeat center center/cover;
+            border-radius: 50%;
+            box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2);
+            transform: translateY(0);
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid white;
+            animation: typing 3s steps(30, end) infinite, blink 0.8s infinite;
+        }
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .about-bg {
+            position: relative;
+            background: linear-gradient(135deg, #b3e5fc, #e3f2fd, #f0f0f0);
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .about-bg::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+        }
+        .glow-text {
+            text-shadow: 0px 0px 15px rgba(0, 122, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-opacity-90 shadow-md py-4 z-50 backdrop-blur-md bg-white/50">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-bold text-blue-600">Ansh's Portfolio</h1>
+            <button id="menu-btn" class="md:hidden text-blue-600 text-2xl">☰</button>
+            <ul id="menu" class="hidden md:flex space-x-6 text-lg font-medium">
+                <li><a href="#about" class="hover:text-blue-500">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-500">Projects</a></li>
+                <li><a href="#tech" class="hover:text-blue-500">Tech Stack</a></li>
+                <li><a href="#qualification" class="hover:text-blue-500">Qualification</a></li>
+                <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section with Enhancements -->
+    <section class="h-screen flex flex-col justify-center items-center text-center text-white hero-bg relative overflow-hidden px-6 md:px-0">
+        <div class="hero-overlay"></div>
+        <div class="hero-image relative z-10"></div>
+        <h1 class="text-4xl md:text-6xl font-bold relative z-10 drop-shadow-lg mt-6">Hello, I'm Ansh</h1>
+        <p class="text-lg md:text-2xl mt-2 relative z-10 drop-shadow-md"><span class="typing">A Full-Stack Web Developer</span></p>
+        <a href="#projects" class="mt-4 bg-white text-blue-500 px-4 md:px-6 py-2 rounded-full font-semibold relative z-10 shadow-lg hover:bg-gray-200 transition">View My Work</a>
+        <div class="mt-4 flex space-x-4 z-10">
+            <a href="#" class="text-xl text-blue-600 hover:text-blue-400">🔗 LinkedIn</a>
+            <a href="#" class="text-xl text-gray-800 hover:text-gray-600">🐙 GitHub</a>
+            <a href="#" class="text-xl text-red-500 hover:text-red-400">📧 Email</a>
+        </div>
+    </section>
+    
+    <!-- About Me -->
+    <section id="about" class="py-20 flex justify-center items-center text-center">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20 about-bg relative z-10">
+            <h2 class="text-5xl font-extrabold text-gray-900 glow-text">About Me</h2>
+            <p class="mt-6 text-lg text-gray-900 max-w-3xl mx-auto leading-relaxed">
+                With a deep passion for web development, I specialize in crafting immersive digital experiences. Proficient in front-end and back-end technologies, I excel in building responsive and dynamic web applications that seamlessly merge design and functionality. My expertise spans HTML, CSS, JavaScript, PHP, and MySQL, ensuring optimal performance and scalability. A problem-solver at heart, I thrive in collaborative environments, constantly innovating to push the boundaries of modern web solutions. My approach is rooted in precision, efficiency, and a commitment to delivering cutting-edge user-centric designs.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Projects -->
+    <section id="projects" class="container mx-auto py-16 text-center px-6">
+        <h2 class="text-3xl md:text-4xl font-bold">Projects</h2>
+        <p class="mt-4 text-gray-700">Check out some of my best work below.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold">Project 1</h3>
+                <p class="mt-2 text-gray-600">Description of the project.</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold">Project 2</h3>
+                <p class="mt-2 text-gray-600">Description of the project.</p>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h3 class="text-xl font-semibold">Project 3</h3>
+                <p class="mt-2 text-gray-600">Description of the project.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tech Stack -->
+    <section id="tech" class="container mx-auto py-16 text-center px-6">
+        <h2 class="text-3xl md:text-4xl font-bold">Tech Stack</h2>
+        <p class="mt-4 text-gray-700">HTML, CSS, JavaScript, PHP, MySQL, React, Node.js, and more.</p>
+    </section>
+    
+    <!-- Qualification -->
+    <section id="qualification" class="container mx-auto py-16 text-center px-6">
+        <h2 class="text-3xl md:text-4xl font-bold">Qualification</h2>
+        <p class="mt-4 text-gray-700">Bachelor's Degree in Computer Science and multiple certifications in web development.</p>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact" class="container mx-auto py-16 text-center px-6">
+        <h2 class="text-3xl md:text-4xl font-bold">Contact</h2>
+        <p class="mt-4 text-gray-700">Email: ansh@example.com | LinkedIn: linkedin.com/in/ansh | GitHub: github.com/ansh</p>
+    </section>
+    
+    <!-- Responsive JavaScript for Menu -->
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("hidden");
+            menu.classList.toggle("flex");
+            menu.classList.toggle("flex-col");
+            menu.classList.toggle("items-center");
+            menu.classList.toggle("absolute");
+            menu.classList.toggle("top-full");
+            menu.classList.toggle("left-0");
+            menu.classList.toggle("w-full");
+            menu.classList.toggle("bg-white");
+            menu.classList.toggle("py-4");
+        });
+    </script>
+</body>
+</html>
